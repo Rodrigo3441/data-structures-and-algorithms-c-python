@@ -10,8 +10,9 @@
 # object file
 *.o
 
-# compiler file
+# compiler files
 *.win
+*__pycache__
 
 # project file
 *.dev
