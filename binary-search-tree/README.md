@@ -12,7 +12,7 @@
 - [x] Find maximum
 - [x] Height
 - [x] Delete
-- [ ] Breadth-first traversal (BFS)
+- [x] Breadth-first traversal (BFS)
 
 ## Complexities
 
