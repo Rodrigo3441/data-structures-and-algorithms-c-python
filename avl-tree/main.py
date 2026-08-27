@@ -16,15 +16,41 @@ def print_tree(root, level=0):
 
         print_tree(root.left, level + 1)
 
-tree = avl.AVLTree()
+
 
 
 if __name__ == '__main__':
+    # root = avl.Node(12)
+    # root = avl.insert(root, 11)
+    # root = avl.insert(root, 10)
+    # root = avl.insert(root, 9)
+    # root = avl.insert(root, 8)
+    # root = avl.insert(root, 7)
 
-    tree.root = tree.insert(tree.root, 10)
-    tree.root = tree.insert(tree.root, 20)
-    tree.root = tree.insert(tree.root, 30)
-    tree.root = tree.insert(tree.root, 40)
-    tree.root = tree.insert(tree.root, 50)
+    root = avl.Node(50)
 
-    print_tree(tree.root)
+    root = avl.insert(root, 30)
+    root = avl.insert(root, 70)
+    root = avl.insert(root, 20)
+    root = avl.insert(root, 40)
+    root = avl.insert(root, 60)
+    root = avl.insert(root, 80)
+    root = avl.insert(root, 10)
+    root = avl.insert(root, 25)
+    root = avl.insert(root, 35)
+    root = avl.insert(root, 45)
+    root = avl.insert(root, 55)
+    root = avl.insert(root, 65)
+    root = avl.insert(root, 75)
+    root = avl.insert(root, 90)
+    root = avl.insert(root, 5)
+    root = avl.insert(root, 15)
+    root = avl.insert(root, 27)
+    root = avl.insert(root, 26)
+    root = avl.insert(root, 28)
+
+    inorder(root)
+    print()
+    print_tree(root)
+
+    print(avl.search(root, 3))

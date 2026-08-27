@@ -3,21 +3,21 @@
 ## Implemented
 
 * [x] Node
-* [ ] Insert
+* [x] Insert
 * [ ] In-order traversal
 * [ ] Pre-order traversal
 * [ ] Post-order traversal
-* [ ] Search
-* [ ] Find minimum
-* [ ] Find maximum
-* [ ] Height
-* [ ] Balance factor
-* [ ] Left rotation
-* [ ] Right rotation
-* [ ] LL case
-* [ ] RR case
-* [ ] LR case
-* [ ] RL case
+* [x] Search
+* [x] Find minimum
+* [x] Find maximum
+* [x] Height
+* [x] Balance factor
+* [x] Left rotation
+* [x] Right rotation
+* [x] LL case
+* [x] RR case
+* [x] LR case
+* [x] RL case
 * [ ] Balanced insertion
 * [ ] Delete
 * [ ] Balanced deletion
