@@ -1,4 +1,5 @@
 import avl
+import avl_class
 
 # left | root | right
 def inorder(root):
@@ -49,8 +50,25 @@ if __name__ == '__main__':
     root = avl.insert(root, 26)
     root = avl.insert(root, 28)
 
-    inorder(root)
-    print()
+    print('subtree before deletion:\n')
+    
     print_tree(root)
 
-    print(avl.search(root, 3))
+    # avl.delete(root, 90)
+    # avl.delete(root, 65)
+    # avl.delete(root, 40)
+    # avl.delete(root, 70)
+    # avl.delete(root, 70)
+    avl.delete(root, 30)
+    root = avl.delete(root, 50)
+    root = avl.delete(root, 70)
+
+    print('\n\nsubtree after deletion:')
+
+    print_tree(root)
+
+
+    print('AVL Class implementation:')
+    tree = avl_class.AVLTree()
+
+    tree.insert(50)

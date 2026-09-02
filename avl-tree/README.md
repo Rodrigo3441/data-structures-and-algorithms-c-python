@@ -18,9 +18,9 @@
 * [x] RR case
 * [x] LR case
 * [x] RL case
-* [ ] Balanced insertion
-* [ ] Delete
-* [ ] Balanced deletion
+* [x] Balanced insertion
+* [x] Delete
+* [x] Balanced deletion
 * [ ] Breadth-first traversal (BFS)
 
 ## Complexities

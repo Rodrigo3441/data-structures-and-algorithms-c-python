@@ -72,14 +72,16 @@ def insert(root, value):
     else:
         root.right = insert(root.right, value)
 
-    root.height = 1 + max(height(root.right), height(root.left))
+    # root.height = 1 + max(height(root.right), height(root.left))
+    root.height = 1 + max_height(root.right, root.left)
     balance_factor = balance(root)
 
-    # next: implement the rotation functions and the flags
+
     # right rotation
     if balance_factor > 1 and value < root.left.value:
         return right_rotation(root)
 
+    # left rotation
     if balance_factor < -1 and value > root.right.value:
         return left_rotation(root)
 
@@ -95,6 +97,69 @@ def insert(root, value):
 
     return root
 
+def delete(root, target) -> Node | None:
+    if root is None:
+        return None
+
+    if target < root.value:
+        root.left = delete(root.left, target)
+
+    elif target > root.value:
+        root.right = delete(root.right, target) 
+
+    else:
+        # remove a leaf node
+        if root.left is None and root.right is None:
+            return None
+
+        # remove a node with two childs
+        elif root.left is not None and root.right is not None:
+            lowest_right = return_min(root.right)
+            root.value = lowest_right
+            right_subtree = delete(root.right, lowest_right)
+            root.right = right_subtree
+            return root
+
+        # remove a node with only one child
+        else:
+            if root.left is None:
+                return root.right
+            else:
+                return root.left
+
+    if root is None:
+        return None
+
+    root.height = 1 + max_height(root.right, root.left)
+    balance_factor = balance(root)
+
+    # right rotation
+    if balance_factor > 1 and balance(root.left) >= 0:
+        print('right rotation')
+        return right_rotation(root)
+
+    # left rotation
+    if balance_factor < -1 and balance(root.right) <= 0:
+        print('left rotation')
+        return left_rotation(root)
+
+    # left-right
+    if balance_factor > 1 and balance(root.left) < 0:
+        print('left-right rotation')
+        root.left = left_rotation(root.left)
+        return right_rotation(root)
+
+    # right_left
+    if balance_factor < -1 and balance(root.right) > 0:
+        print('right-left rotation')
+        root.right = right_rotation(root.right)
+        return left_rotation(root)
+
+
+    return root
+
+
+# define the right rotation function
 def right_rotation(root: Node):
     left_subtree = root.left
     left_right_subtree = left_subtree.right
@@ -109,6 +174,7 @@ def right_rotation(root: Node):
 
     return root
 
+# define the left rotation function
 def left_rotation(root: Node):
     right_subtree = root.right
     right_left_subtree = right_subtree.left
@@ -123,6 +189,7 @@ def left_rotation(root: Node):
 
     return root
 
+# check the balance of the tree
 def check_balance(root: Node):
     if root is None:
         return
