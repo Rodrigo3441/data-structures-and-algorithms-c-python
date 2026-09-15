@@ -4,24 +4,24 @@
 
 * [x] Node
 * [x] Insert
-* [] In-order traversal
-* [] Pre-order traversal
-* [] Post-order traversal
-* [] Search
+* [x] In-order traversal
+* [x] Pre-order traversal
+* [x] Post-order traversal
+* [x] Search
 * [x] Find minimum
-* [] Find maximum
+* [x] Find maximum
 * [x] Height
 * [x] Balance factor
 * [x] Left rotation
-* [] Right rotation
+* [x] Right rotation
 * [x] LL case
-* [] RR case
-* [] LR case
-* [] RL case
-* [] Balanced insertion
-* [] Delete
-* [] Balanced deletion
-* [ ] Breadth-first traversal (BFS)
+* [x] RR case
+* [x] LR case
+* [x] RL case
+* [x] Balanced insertion
+* [x] Delete
+* [x] Balanced deletion
+* [] Breadth-first traversal (BFS)
 
 ## Complexities
 
