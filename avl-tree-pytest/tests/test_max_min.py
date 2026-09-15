@@ -8,3 +8,12 @@ def test_min():
     root = avl.insert(root, 30)
 
     assert avl.return_min(root).value == -10
+
+def test_max():
+    root = avl.Node(10)
+    root = avl.insert(root, 0)
+    root = avl.insert(root, -10)
+    root = avl.insert(root, 20)
+    root = avl.insert(root, 30)
+
+    assert avl.return_max(root).value == 30
