@@ -49,4 +49,21 @@ class RedBlackTree:
         return node.parent.right is node
 
     def rotate_left(self, node: Node):
-        pass
+        new_top = node.right
+
+        if node.parent is not None:
+            node.parent.right = new_top
+            new_top.parent = node.parent
+        else:
+            self.root = new_top
+
+        middle_subtree = new_top.left
+        new_top.left = node
+        node.right = middle_subtree
+
+        if middle_subtree is not None:
+            middle_subtree.parent = node
+
+        node.parent = new_top
+            
+        
