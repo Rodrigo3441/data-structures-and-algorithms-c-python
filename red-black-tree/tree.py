@@ -212,4 +212,73 @@ class RedBlackTree:
                 current = current.right
 
         return None
+
+    def delete(self, target: int):
+        node = self.search(target)
+
+        if node is None:
+            return
+
+        # no childs
+        if node.left is None and node.right is None:
+            if node.parent is None:
+                self.root = None
+                return
+
+            if self.is_left_child(node):
+                node.parent.left = None
+            else:
+                node.parent.right = None
+                
+            node.parent = None
+
+        # two childs
+        elif node.left is not None and node.right is not None:
+            pass
+
+        # one child on left or right
+        else:
+            # handle case where the target is the root
+            if node.parent is None:
+                if node.left is None:
+                    self.root = node.right
+                    node.right.parent = None
+                    node.right = None
+                    
+                else:
+                    self.root = node.left
+                    node.left.parent = None
+                    node.left = None
+                return
+
+            # decide whether node has right child
+            if node.left is None:
+
+                # the right child points to the new parent
+                node.right.parent = node.parent
+
+                # decide whether the node is a left child or right child
+                if self.is_left_child(node):
+                    node.parent.left = node.right
+                    
+                else:
+                    node.parent.right = node.right
+
+            # decie whether node has a left child
+            else:
+                # the left child points to the new parent
+                node.left.parent = node.parent
+
+                # decide whether the node is a left child or right child
+                if self.is_right_child(node):
+                    node.parent.right = node.left
+
+                else:
+                    node.parent.left = node.left
+
+            # both references within current node are removed
+            node.parent = None
+            node.right = None
+            node.left = None
+
         
